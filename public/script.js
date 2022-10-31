@@ -9,12 +9,29 @@ const option_list = document.querySelector(".option_list");
 const time_line = document.querySelector("header .time_line");
 const timeText = document.querySelector(".timer .time_left_txt");
 const timeCount = document.querySelector(".timer .timer_sec");
-let person = ""
+let person = "";
+let repet ="";
 
 // if startQuiz button clicked
-start_btn.onclick = ()=>{
+start_btn.onclick = async()=>{
     fun1();
     info_box.classList.add("activeInfo"); //show info box
+    const data = {person};
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    };
+
+   const response = await fetch('/ch',options)
+   const data2 = await response.json()
+   repet = (data2.repet)
+   console.log(data2.repet)
+   if (repet == "yes"){
+    location.reload();
+   }
 }
 
 // if exitQuiz button clicked

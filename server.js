@@ -29,5 +29,26 @@ app.post('/api', (request, response) => {
  score = (request.body.userScore)
  
  db.ref(request.body.person).set(score)
+ response.end();
 });
+
+app.post('/ch',(request,response) => {
+  var ref = (request.body.person)
+  var firebaseref = firebase.database().ref(ref)
+  firebaseref.once("value", function(snapshot){
+    var data = snapshot.val();
+    console.log(data)
+   if (data == null){
+    console.log("kk")
+    response.json({
+      repet: "no"
+    })
+   }
+   if (data != null){
+    response.json({
+      repet: "yes"
+    });
+   }
+  })
+})
 
