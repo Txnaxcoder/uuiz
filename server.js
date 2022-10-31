@@ -20,7 +20,7 @@ const firebaseConfig = {
 console.log("Server is running")
 const express = require("express")
 const app = express();
-app.listen(3000, () => console.log("listening at 3000"))
+app.listen(process.env.PORT || 5000)
 app.use(express.static(__dirname + '/public'));
 app.use(express.json({limit: '1mb'}));
 var score;
