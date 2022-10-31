@@ -20,14 +20,14 @@ const firebaseConfig = {
 console.log("Server is running")
 const express = require("express")
 const app = express();
-app.listen(process.env.PORT || 5000)
+app.listen(process.env.PORT || 3000)
 app.use(express.static(__dirname + '/public'));
 app.use(express.json({limit: '1mb'}));
 var score;
 app.post('/api', (request, response) => {
  console.log(request.body.person)
  score = (request.body.userScore)
- database.insert({personscore:score})
+ 
  db.ref(request.body.person).set(score)
 });
 
