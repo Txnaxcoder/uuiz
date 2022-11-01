@@ -11,6 +11,15 @@ const timeText = document.querySelector(".timer .time_left_txt");
 const timeCount = document.querySelector(".timer .timer_sec");
 let person = "";
 let repet ="";
+var bg1 = 'url(https://www.tourmyindia.com/blog//wp-content/uploads/2018/08/Karnataka-Travel-Alerts-Safety-Tips.jpg)'
+var bg2 = 'url(https://www.holidify.com/images/bgImages/KARNATAKA.jpg)'
+var bg3 = 'url(https://img.theculturetrip.com/450x/smart/wp-content/uploads/2017/10/karnataka-pattadakal.jpg)'
+var bg4 = 'url(https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/7f/77/2d/temple-big-shiva.jpg?w=500&h=300&s=1)'
+var bg5 = 'url(https://static.toiimg.com/photo/msid-47148993,width-96,height-65.cms)'
+var bg6 = 'url(https://upload.wikimedia.org/wikipedia/commons/0/05/Kali_River_620.JPG)'
+var bg7 = 'url(https://www.oneindia.com/img/2022/10/karnataka-1667133840.jpg)'
+var bg8 = 'url(https://media.istockphoto.com/photos/december-2021-santhebennur-karnataka-india-musafirkhana-and-honda-the-picture-id1389319139?b=1&k=20&m=1389319139&s=170667a&w=0&h=5bRhg2CBgy0v5O4Hi_dWSP2IeLtujgheZ2KeGOokGvo=)'
+var c = 0;
 
 // if startQuiz button clicked
 start_btn.onclick = async()=>{
@@ -244,4 +253,33 @@ function fun1() {
 person = prompt("Please enter your name");
 console.log(person)
   }
-  
+  timer = setInterval(function() {
+    c = c + 1;
+    if (c == 1){
+       document.body.style.backgroundImage = bg1
+    }
+    if (c == 2){
+        document.body.style.backgroundImage = bg2
+     }
+     if (c == 3){
+        document.body.style.backgroundImage = bg3
+     }
+     if (c == 4){
+        document.body.style.backgroundImage = bg4
+     }
+     if (c == 5){
+        document.body.style.backgroundImage = bg5
+     }
+     if (c == 6){
+        document.body.style.backgroundImage = bg6
+     }
+     if (c == 7){
+        document.body.style.backgroundImage = bg7
+     }
+     if (c == 8){
+        document.body.style.backgroundImage = bg8
+        c = 0
+        console.log(c)
+     }
+    
+}, 4000);

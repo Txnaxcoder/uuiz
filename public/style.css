@@ -8,7 +8,9 @@
 }
 
 body{
-    background: #007bff;
+    background-image: url('https://www.tourmyindia.com/blog//wp-content/uploads/2018/08/Karnataka-Travel-Alerts-Safety-Tips.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 ::selection{
